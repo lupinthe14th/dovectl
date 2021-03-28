@@ -2,13 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"os"
 	"sync"
 
 	"github.com/lupinthe14th/sync/models"
-	"github.com/lupinthe14th/sync/usecases"
+	"github.com/lupinthe14th/sync/usecases/doveadm"
 )
 
 func main() {
@@ -22,9 +21,8 @@ func main() {
 	for _, user := range users {
 		wg.Add(1)
 		go func(u *models.User) {
-			fmt.Printf("ID: %v Password: %v\n", u.ID, u.Password)
-			if err := usecases.Echo(u.ID, u.Password); err != nil {
-				log.Fatalf("echo failed: %v", err)
+			if err := doveadm.Sync(u); err != nil {
+				log.Fatalf("doveadm sync failed: %v", err)
 			}
 			wg.Done()
 		}(user)
