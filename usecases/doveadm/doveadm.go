@@ -17,10 +17,13 @@ func Sync(u *models.User) error {
 	if err != nil {
 		return err
 	}
-	return exec.Command(
+	if err := exec.Command(
 		bin,
 		"-o", fmt.Sprintf("imapc_user=%s", u.ID),
 		"-o", fmt.Sprintf("imapc_password=%s", u.Password),
 		"sync", "-R", "-u", u.ID, "imapc:",
-	).Run()
+	).Run(); err != nil {
+		return fmt.Errorf("user: %v %v", u.ID, err)
+	}
+	return nil
 }
