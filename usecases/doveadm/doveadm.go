@@ -2,9 +2,10 @@ package doveadm
 
 import (
 	"fmt"
-	"github.com/cli/safeexec"
-	"github.com/lupinthe14th/sync/models"
 	"os/exec"
+
+	"github.com/cli/safeexec"
+	"github.com/lupinthe14th/dovectl/models"
 )
 
 func doveadm() (string, error) {
