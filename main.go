@@ -21,8 +21,8 @@ func main() {
 	for _, user := range users {
 		wg.Add(1)
 		go func(u *models.User) {
-			if err := doveadm.Sync(u); err != nil {
-				log.Fatalf("doveadm sync failed: %v", err)
+			if err := doveadm.Backup(u); err != nil {
+				log.Fatalf("doveadm backup failed: %v", err)
 			}
 			wg.Done()
 		}(user)
