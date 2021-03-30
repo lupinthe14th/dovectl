@@ -6,8 +6,8 @@ import (
 	"os"
 	"sync"
 
-	"github.com/lupinthe14th/sync/models"
-	"github.com/lupinthe14th/sync/usecases/doveadm"
+	"github.com/lupinthe14th/dovectl/models"
+	"github.com/lupinthe14th/dovectl/usecases/doveadm"
 )
 
 func main() {

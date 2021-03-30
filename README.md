@@ -1,15 +1,15 @@
-# sync
+# dovectl
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/lupinthe14th/sync)
-![](https://github.com/lupinthe14th/sync/workflows/release/badge.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/lupinthe14th/sync)][goreportcard]
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/lupinthe14th/dovectl)
+![](https://github.com/lupinthe14th/dovectl/workflows/release/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/lupinthe14th/dovectl)][goreportcard]
 <!-- links -->
-[goreportcard]: https://goreportcard.com/report/github.com/lupinthe14th/sync
-[release]: https://github.com/lupinthe14th/sync/releases/latest
+[goreportcard]: https://goreportcard.com/report/github.com/lupinthe14th/dovectl
+[release]: https://github.com/lupinthe14th/dovectl/releases/latest
 
 ## Introduction
 
-Wrapper for doveadm sync in Go
+Wrapper for doveadm in Go
 
 ## Installation
 
@@ -19,5 +19,5 @@ Download the binary from [GitHub Releases][release] and drop it in your `$PATH`.
 - [Linux][release]
 
 ```
-go get -u github.com/lupinthe14th/sync/...
+go get -u github.com/lupinthe14th/dovectl/...
 ```

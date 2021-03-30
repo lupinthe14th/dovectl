@@ -1,4 +1,4 @@
-module github.com/lupinthe14th/sync
+module github.com/lupinthe14th/dovectl
 
 go 1.16
 
