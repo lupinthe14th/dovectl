@@ -34,7 +34,7 @@ import (
 // backupCmd represents the backup command
 var backupCmd = &cobra.Command{
 	Use:   "backup",
-	Short: "A brief description of your command",
+	Short: "Concurrency doveadm backup in Go",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		fmt.Println("backup called")
 		var (
@@ -48,7 +48,7 @@ var backupCmd = &cobra.Command{
 			wg.Add(1)
 			go func(u *models.User) {
 				if err := doveadm.Backup(u); err != nil {
-					fmt.Printf("doveadm backup failed: %v", err)
+					fmt.Printf("doveadm backup failed: %v\n", err)
 				}
 				wg.Done()
 			}(user)
@@ -60,14 +60,4 @@ var backupCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(backupCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// backupCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// backupCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
