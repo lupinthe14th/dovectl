@@ -18,10 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package main
+package cmd
 
-import "github.com/lupinthe14th/dovectl/cmd"
+import (
+	"fmt"
 
-func main() {
-	cmd.Execute()
+	"github.com/lupinthe14th/dovectl/pkg/version"
+	"github.com/spf13/cobra"
+)
+
+// versionCmd represents the version command
+var versionCmd = &cobra.Command{
+	Use:   "version",
+	Short: "Print the version number of dovectl",
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Printf("Client:\n")
+		fmt.Printf(" Version:\t%s\n", version.Version)
+		fmt.Printf(" Git commit:\t%s\n", version.Revision)
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(versionCmd)
 }
